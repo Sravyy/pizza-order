@@ -49,7 +49,7 @@ $(function(){
 
     $(".size").text(newPizza.size);
     $(".pizza").text(inputtedNumber);
-    $("#cost").text((cost)+this.topping.length);
+    $("#cost").text((cost)+newPizza.topping.length);
     $("#result").show();
   })
 
