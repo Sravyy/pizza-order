@@ -9,50 +9,64 @@
   <title>My Pizza</title>
 </head>
 <body>
-  <div class="container">
-    <div class="jumbrotron">
+  <div class="jumbrotron">
+    <div class="container">
       <h1>My Pizza</h1>
     </div>
-    <div class="container">
-      <form class="formOne">
-        <div class="form-group">
-          <label for="crust">Choose the type of Crust :</label><br>
-          <input type="checkbox" name="crust" value="panPizza"> Pan Pizza<br>
-          <input type="checkbox" name="crust" value="handTossed"> Hand Tossed<br>
-          <input type="checkbox" name="crust" value="thinCrust"> Thin 'N Crispy<br>
-        </div>
-
-        <div class="form-group">
-          <label for="cheese">Choose the amount of Cheese :</label><br>
-          <input type="checkbox" name="cheese" value="extra"> Extra<br>
-          <input type="checkbox" name="cheese" value="regular"> Regular<br>
-          <input type="checkbox" name="cheese" value="none"> No Cheese<br>
-        </div>
-
-        <div class="form-group">
-          <label for="meats">Choose the type of Meats :</label><br>
-          <input type="checkbox" name="meat" value="pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="meat" value="chicken"> Grilled Chicken<br>
-          <input type="checkbox" name="meat" value="bacon"> Bacon<br>
-        </div>
-
-        <div class="form-group">
-          <label for="veggies">Choose the type of Veggies :</label><br>
-          <input type="checkbox" name="veggies" value="onion"> Red Onions<br>
-          <input type="checkbox" name="veggies" value="pepper"> Green Bell Peppers<br>
-          <input type="checkbox" name="veggies" value="tomato"> Roma Totamtoes<br>
-        </div>
-
-        <div class="form-group">
-          <label for="size">Choose the type of Crust :</label><br>
-          <input type="checkbox" name="size" value="medium"> Medium<br>
-          <input type="checkbox" name="size" value="large"> Large<br>
-          <input type="checkbox" name="size" value="extraLarge"> Extra Large<br>
-        </div>
-        
-      </form>
-    </div>
-
   </div>
+  <div class="container">
+    <form class="formOne">
+      <div class="form-group">
+        <label for="crust">Choose the type of Crust :</label><br>
+        <input type="checkbox" name="crust" value="panPizza"> Pan Pizza<br>
+        <input type="checkbox" name="crust" value="handTossed"> Hand Tossed<br>
+        <input type="checkbox" name="crust" value="thinCrust"> Thin 'N Crispy<br>
+      </div>
+
+      <div class="form-group">
+        <label for="cheese">Choose the amount of Cheese :</label><br>
+        <input type="checkbox" name="cheese" value="extra"> Extra<br>
+        <input type="checkbox" name="cheese" value="regular"> Regular<br>
+        <input type="checkbox" name="cheese" value="none"> No Cheese<br>
+      </div>
+
+      <div class="form-group">
+        <label for="meats">Choose the type of Meats :</label><br>
+        <input type="checkbox" name="meat" value="pepperoni"> Pepperoni<br>
+        <input type="checkbox" name="meat" value="chicken"> Grilled Chicken<br>
+        <input type="checkbox" name="meat" value="bacon"> Bacon<br>
+      </div>
+
+      <div class="form-group">
+        <label for="veggies">Choose the type of Veggies :</label><br>
+        <input type="checkbox" name="veggies" value="onion"> Red Onions<br>
+        <input type="checkbox" name="veggies" value="pepper"> Green Bell Peppers<br>
+        <input type="checkbox" name="veggies" value="tomato"> Roma Totamtoes<br>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Choose the type of Crust :</label><br>
+        <input type="checkbox" name="size" value="medium"> Medium<br>
+        <input type="checkbox" name="size" value="large"> Large<br>
+        <input type="checkbox" name="size" value="extraLarge"> Extra Large<br>
+      </div>
+
+      <div class="form-group">
+        <label for="pizza">Number of Pizzas :</label>
+        <input id ="pizza" type="number" required>
+      </div>
+
+      <button type="submit" name="button">Order</button>
+      <input id= "refresh" type=button value="Refresh" onClick="history.go()">
+
+    </form>
+  </div>
+  <div id="result">
+         <h3>Your Order Details :</h3>
+         <p>Pizza: <span class="size"></span></p>
+         <p>Number of Pizzas: <span class="pizza"></span></p>
+         <p>Total Cost: <span id="cost"></span></p>
+   </div>
+
 </body>
 </html>
