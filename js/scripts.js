@@ -26,7 +26,6 @@ Pizza.prototype.fullPrice = function(){
 };
 
 
-
 //FrontEnd Logic
 
 $(function(){
@@ -46,6 +45,13 @@ $(function(){
      newPizza.topping.push(topping);
    });
 
+   $("button#1").submit(function(){
+     $("#page1").hide();
+     $("#page2").show();
+     $("#page3").hide();
+     $("#result").hide();
+
+   })
 
     $(".size").text(newPizza.size);
     $(".pizza").text(inputtedNumber);
