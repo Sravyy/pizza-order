@@ -10,9 +10,9 @@ function Pizza(cheese, size, pizza) {
 
 
 Pizza.prototype.fullPrice = function(){
-  if (this.size === 'large'){
+  if (this.size === 'Large'){
     this.basePrice += 4;
-  } else if (this.size === 'extraLarge'){
+  } else if (this.size === 'ExtraLarge'){
     this.basePrice += 6;
   } else {
     this.basePrice = 10;
@@ -29,6 +29,8 @@ Pizza.prototype.fullPrice = function(){
 //FrontEnd Logic
 
 $(function(){
+
+
   $("form.formOne").submit(function(event){
     event.preventDefault();
 
@@ -45,18 +47,15 @@ $(function(){
      newPizza.topping.push(topping);
    });
 
-   $("button#1").submit(function(){
-     $("#page1").hide();
-     $("#page2").show();
-     $("#page3").hide();
-     $("#result").hide();
-
-   })
 
     $(".size").text(newPizza.size);
     $(".pizza").text(inputtedNumber);
     $("#cost").text((cost)+newPizza.topping.length);
     $("#result").show();
+    // $("#success").show();
+    $("#page1").hide();
+    $("#page2").hide();
+    $("#page3").hide();
   })
 
 });
