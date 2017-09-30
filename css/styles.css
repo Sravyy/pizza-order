@@ -5,7 +5,11 @@
   url("../img/cover.jpg");
   background-position: fixed;
   background-attachment: fixed;
-  height : 500px;
+  height : 450px;
+}
+@font-face {
+    font-family: Christmans in Finland;
+    src: url("../fonts/Christmas in Finland.ttf");
 }
 h1 {
 height: 150px;
@@ -17,7 +21,7 @@ margin-top: 20px;
 
 #page1, #page2, #page3 {
   margin-top: 30px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 #result, #success{
@@ -32,4 +36,10 @@ h3{
   font-size: 30px;
   color : lightgreen;
   font-weight: bold;
+}
+
+.btn {
+  margin-bottom: 40px;
+  width: 100px;
+  font-size: 15px;
 }
