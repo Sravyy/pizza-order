@@ -26,7 +26,7 @@ Pizza.prototype.fullBasePrice = function(){
 };
 
 Pizza.prototype.cost = function(numberOfToppings) {
-  return this.fullBasePrice() + this.topping.length;
+  return this.fullBasePrice() + (this.numberOfPizzas *this.topping.length);
 };
 
 //FrontEnd Logic
