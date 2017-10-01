@@ -1,15 +1,15 @@
 
 //Business Logic
-function Pizza(cheese, size, pizza) {
+function Pizza(cheese, size, numberOfPizzas) {
   this.cheese = cheese;
   this.size = size;
-  this.pizza = pizza;
+  this.numberOfPizzas = numberOfPizzas;
   this.basePrice = 10;
   this.topping = [];
 }
 
 
-Pizza.prototype.fullPrice = function(){
+Pizza.prototype.fullBasePrice = function(){
   if (this.size === 'Large'){
     this.basePrice += 4;
   } else if (this.size === 'ExtraLarge'){
@@ -22,9 +22,12 @@ Pizza.prototype.fullPrice = function(){
     this.basePrice += 1;
   };
 
-  return this.pizza*this.basePrice;
+  return this.numberOfPizzas*this.basePrice;
 };
 
+Pizza.prototype.cost = function(numberOfToppings) {
+  return this.fullBasePrice() + this.topping.length;
+};
 
 //FrontEnd Logic
 
@@ -36,10 +39,9 @@ $(function(){
 
     var selectedCheese = $("select#cheese").val();
     var selectedSize = $("select#size").val();
-    var inputtedNumber = parseInt($("input#pizza").val());
+    var inputNumberOfPizzas = parseInt($("input#pizza").val());
 
-    var newPizza = new Pizza(selectedCheese, selectedSize, inputtedNumber);
-    var cost = newPizza.fullPrice();
+    var newPizza = new Pizza(selectedCheese, selectedSize, inputNumberOfPizzas);
 
 
     $("input:checkbox[name=topping]:checked").each(function() {
@@ -49,8 +51,8 @@ $(function(){
 
 
     $(".size").text(newPizza.size);
-    $(".pizza").text(inputtedNumber);
-    $("#cost").text((cost)+newPizza.topping.length);
+    $(".pizza").text(inputNumberOfPizzas);
+    $("#cost").text(newPizza.cost());
     $("#result").show();
     // $("#success").show();
     $("#page1").hide();
