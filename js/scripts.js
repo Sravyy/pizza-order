@@ -25,7 +25,7 @@ Pizza.prototype.fullBasePrice = function(){
   return this.numberOfPizzas*this.basePrice;
 };
 
-Pizza.prototype.cost = function(numberOfToppings) {
+Pizza.prototype.cost = function(numberOfToppings) {   //havnt used numberOfToppings anywhere else
   return this.fullBasePrice() + (this.numberOfPizzas *this.topping.length);
 };
 
@@ -54,7 +54,6 @@ $(function(){
     $(".pizza").text(inputNumberOfPizzas);
     $("#cost").text(newPizza.cost());
     $("#result").show();
-    // $("#success").show();
     $("#page1").hide();
     $("#page2").hide();
     $("#page3").hide();
